@@ -1,18 +1,22 @@
 # Learning the Composition of Ultra-High-Energy Cosmic Rays  
 (https://arxiv.org/abs/2212.04760) 
 
-[Status: 
-- a simulated dataset with 26 primaries is included as a test set
-- script to include detector effects is added
-Comming soon:
-- composition_inference.py script: computing moments, likelihood, sampling from posterior, most probable composition, confidence levels
-- jupyter notebook with example how to use
-- utilities: plots, confidence levels of moments, distance between primaries
-- bootstrapping with different energy spectra
-- machine learning model with Bayesian statistics to predict primary type,
-- classification of events based on Xmax
-- inclusion of ground data to existing method to infer the composition,
-- ...]
+## Status and Roadmap
+
+**Current Status:**
+- A simulated dataset with 26 primaries is included as a test set
+- Script to include detector effects is added
+
+**Coming Soon:**
+- `composition_inference.py` script: computing moments, likelihood, sampling from posterior, most probable composition, confidence levels
+- Jupyter notebook with example usage
+- Utilities: plots, confidence levels of moments, distance between primaries
+- Bootstrapping with different energy spectra
+- Machine learning model with Bayesian statistics to predict primary type
+- Classification of events based on Xmax
+- Inclusion of ground data to existing method to infer the composition
+- ...
+
 
 This repository implements the method proposed in [this paper](https://arxiv.org/abs/2212.04760) to **infer the composition of ultra-high-energy cosmic rays (UHECRs)**. The method estimates the fraction of different primaries based on the longitudinal profile observables Xmax and its uncertainty dXmax.  
 
