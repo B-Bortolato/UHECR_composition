@@ -121,24 +121,8 @@ pip install -r requirements.txt
 
 ## Quick Start
 
-```python
-import numpy as np
-from detector_effects import DetectorEffects
+**Look at Jupyter notebook in the files***
 
-# Load raw data
-data_raw = np.load('dataset_test/EPOS_xmax_Ebin2.npy', allow_pickle=True)
-
-# Initialize detector effects
-logE_start = 18
-logE_end = 18.3
-deteff = DetectorEffects(data=data_raw, logE_start=logE_start, logE_end=logE_end)
-
-# Include detector effects and get processed data
-data_processed = deteff.include(data_unit='EeV')
-
-# Preview first 5 events of the first primary
-print(data_processed[0][:5])
-```
 
 ---
 
