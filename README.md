@@ -6,10 +6,10 @@
 **Current Status:**
 - A simulated dataset with 26 primaries is included as a test set
 - Script to include detector effects is added
-
-**Coming Soon:**
 - `composition_inference.py` script: computing moments, likelihood, sampling from posterior, most probable composition, confidence levels
 - Jupyter notebook with example usage
+- 
+**Coming Soon:**
 - Utilities: plots, confidence levels of moments, distance between primaries
 - Bootstrapping with different energy spectra
 - Machine learning model with Bayesian statistics to predict primary type
