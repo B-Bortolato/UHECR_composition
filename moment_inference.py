@@ -93,7 +93,7 @@ def bootstrap_nonC_simulated(data_simulated,
             z4 = np.sum( xmax_sample**4 * norm) / normsum 
             z5 = np.sum( xmax_sample**5 * norm) / normsum
             z6 = np.sum( xmax_sample**6 * norm) / normsum
-            non_cent_moments_sim[z, k] = [z1, z2, z3, z4, z5, z6]
+            non_cent_moments_sim[z, k] = [z1, z2, z3, z4, z5, z6][:num_bootstrap_features]
     return non_cent_moments_sim
     
 
@@ -427,6 +427,11 @@ def bootstrap_measured(data_measured, E_min, E_max,
     num_bootstrap_samples = 10000
     num_bootstrap_features = 6
     
+    con = (E >= E_min) & (E <= E_max)
+    E = E[con]
+    dE = dE[con]
+    xmax = xmax[con]
+    dxmax = dxmax[con]
 
     
     central_moments_exp = np.zeros((num_bootstrap_samples, num_bootstrap_features))
@@ -502,7 +507,7 @@ def z_mean_cov_measured(central_moments_exp, num_moments):
 
 
 
-def log_likelihood(w, num_moments, non_cent_moments_sim, central_moments_exp):
+def define_loglikelihood(num_moments, non_cent_moments_sim, central_moments_exp):
     """
     Construct a log-likelihood function for comparing simulated and measured
     X_max moment distributions, based on a specified number of central moments.
@@ -584,7 +589,7 @@ def log_likelihood(w, num_moments, non_cent_moments_sim, central_moments_exp):
                 Log-likelihood value using the first `num_moments`
                 central moments of X_max.
             """
-            z_sim_mean, z_sim_cov = z_mean_cov_simulated(w, non_cent_moments_sim)
+            z_sim_mean, z_sim_cov = z_mean_cov_simulated(w, non_cent_moments_sim, num_moments)
             inv_cov_sim = np.linalg.inv(z_sim_cov)
             inv_inv_cov = np.linalg.inv(inv_cov_sim + inv_cov_aug)
             
