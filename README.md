@@ -103,9 +103,21 @@ pip install -r requirements.txt
 
 If you find this code useful, please cite:  
 **[Learning the Composition of Ultra-High-Energy Cosmic Rays, arXiv:2212.04760](https://arxiv.org/abs/2212.04760)**
-
-
-
+```
+@article{Bortolato:2022ocs,
+    author = "Bortolato, Blaz and Kamenik, Jernej F. and Tammaro, Michele",
+    title = "{Learning the composition of ultrahigh energy cosmic rays}",
+    eprint = "2212.04760",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.HE",
+    doi = "10.1103/PhysRevD.108.022004",
+    journal = "Phys. Rev. D",
+    volume = "108",
+    number = "2",
+    pages = "022004",
+    year = "2023"
+}
+```
 
 
 
